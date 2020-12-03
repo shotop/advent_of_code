@@ -10,4 +10,4 @@ res = input.map(&:split).select do |policy|
   password.count(char).between?(count_range.first, count_range.last)
 end
 
-binding.pry
+puts res.count
