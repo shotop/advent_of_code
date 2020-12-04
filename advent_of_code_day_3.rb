@@ -21,6 +21,8 @@ p trees
 #part 2
 slopes = [[1,1],[3,1],[5,1],[7,1],[1,2]]
 
+slope_multiple = 1
+
 slopes.each do |slope|
   index = 0
   trees = 0
@@ -28,12 +30,15 @@ slopes.each do |slope|
   input.each_slice(slope.last) do |slice|
     line = slice.first
 
-    while index > line.length do
+    while index >= line.length do
       line = line.concat(line)
     end
 
     trees += 1 if line[index] == "#"
     index += slope.first
   end
-  p trees
+
+  slope_multiple *= trees
 end
+
+p slope_multiple
