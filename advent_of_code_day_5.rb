@@ -35,3 +35,7 @@ seat_ids = input.map do |seat_code|
 end
 
 p seat_ids.max
+
+#prob 2
+p seat_ids.sort.each_cons(2).select { |a,b| b-a > 1 }
+#[[598, 600]]
